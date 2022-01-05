@@ -1,0 +1,34 @@
+{
+  "name": "Video Downloader for Tik Tak",
+  "description": "Download tiktok.com's videos with a single click",
+  "version": "0.1.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "data/icons/16.png",
+    "32": "data/icons/32.png",
+    "48": "data/icons/48.png",
+    "64": "data/icons/64.png",
+    "128": "data/icons/128.png",
+    "256": "data/icons/256.png",
+    "512": "data/icons/512.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "optional_permissions": [
+    "downloads"
+  ],
+  "background": {
+    "service_worker": "worker.js"
+  },
+  "content_scripts": [{
+    "matches": ["*://www.tiktok.com/*"],
+    "js": ["data/inject/button.js"],
+    "css": ["data/inject/button.css"],
+    "run_at": "document_start"
+  }],
+  "web_accessible_resources": [{
+    "resources": ["data/inject/button.svg"],
+    "matches": ["*://www.tiktok.com/*"]
+  }]
+}

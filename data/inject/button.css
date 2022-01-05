@@ -1,0 +1,20 @@
+
+.download-button {
+  width: 48px;
+  height: 48px;
+  background: url('chrome-extension://__MSG_@@extension_id__/data/inject/button.svg') center center no-repeat;
+  background-size: 16px;
+  background-color: #f1f1f2;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #000;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.download-button.working {
+  opacity: 0.6;
+  pointer-events: none;
+  background-image: none;
+}
